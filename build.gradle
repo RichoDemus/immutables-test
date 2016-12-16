@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+defaultTasks 'build'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:1.0.5'
+    compileOnly 'org.immutables:value:2.3.9' // "provided" in maven
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.6.0'
+    testCompile 'io.dropwizard:dropwizard-testing:1.0.5'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/generated'
+        }
+    }
+}
